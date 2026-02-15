@@ -14,7 +14,10 @@ const Hero: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrollY(window.scrollY);
+      // Use requestAnimationFrame for smoother performance on high-refresh rate displays
+      window.requestAnimationFrame(() => {
+        setScrollY(window.scrollY);
+      });
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -40,8 +43,8 @@ const Hero: React.FC = () => {
     };
   }, []);
 
-  // Calculate parallax offset - background moves at 30% of scroll speed
-  const parallaxOffset = scrollY * 0.3;
+  // background moves at 25% of scroll speed for a subtle deep sense of depth
+  const parallaxOffset = scrollY * 0.25;
 
   return (
     <section 
@@ -49,15 +52,14 @@ const Hero: React.FC = () => {
       className="relative h-screen min-h-[700px] flex items-center overflow-hidden bg-navy"
     >
       {/* Parallax Background Container */}
-      <div 
-        className="absolute inset-0 z-0 overflow-hidden"
-        style={{ height: '120%', top: '-10%' }}
-      >
+      <div className="absolute inset-0 z-0">
         <div 
-          className="absolute inset-0 bg-cover bg-center transition-transform duration-75 ease-out"
+          className="absolute inset-0 bg-cover bg-center scale-110"
           style={{ 
             backgroundImage: 'url("https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=2070&auto=format&fit=crop")',
-            transform: `translateY(${parallaxOffset}px)`
+            // Using translate3d triggers hardware acceleration for smoother rendering
+            transform: `translate3d(0, ${parallaxOffset}px, 0)`,
+            willChange: 'transform'
           }}
         >
           <div className="absolute inset-0 gradient-overlay" />
