@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Mail, Phone, Linkedin } from 'lucide-react';
 
@@ -9,7 +8,7 @@ const CEOSection: React.FC = () => {
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-16">
           <div className="lg:w-2/5">
             <div className="relative">
-              <div className="absolute inset-0 bg-gold/10 -rotate-6 transform -z-1 rounded-sm" />
+              <div className="absolute inset-0 bg-gold/10 -rotate-6 transform z-[-1] rounded-sm" />
               <img 
                 src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop" 
                 alt="Anthony, CEO" 
