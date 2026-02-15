@@ -1,8 +1,5 @@
 {
   "name": "Research Partners MENA",
   "description": "High-end corporate website for a Dubai-based strategic intelligence and market research firm, featuring cinematic design and interactive data insights.",
-  "requestFramePermissions": [
-    "camera",
-    "microphone"
-  ]
+  "requestFramePermissions": []
 }

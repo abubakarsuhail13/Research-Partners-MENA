@@ -6,7 +6,7 @@ const About: React.FC = () => {
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="relative">
-            <div className="absolute -top-10 -left-10 w-40 h-40 bg-slate-50 rounded-full z-[-1]" />
+            <div className="absolute -top-10 -left-10 w-40 h-40 bg-slate-50 rounded-full -z-10" />
             <img 
               src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop" 
               alt="Architecture" 
